@@ -24,7 +24,8 @@ export const SITE_CONFIG = {
 
 export const NAV_ITEMS = [
   { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
+  { label: 'Programmes', href: '/programmes' },
+  { label: 'Creative Futures', href: '/creative-futures' },
   { label: 'Impact', href: '/impact' },
   { label: 'Events', href: '/events' },
   { label: 'Updates', href: '/news' },

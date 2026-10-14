@@ -1,0 +1,21 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Camera, Palette, BrainCircuit, BriefcaseBusiness, Megaphone, Video, ArrowRight } from 'lucide-react'
+import RevealOnScroll from '@/components/animations/RevealOnScroll'
+
+export const metadata: Metadata = { title: 'Creative Futures | Momentum Wellbeing CIC', description: 'A developing Momentum Wellbeing initiative making creative and digital skills more accessible.' }
+const skills = [
+  [Camera,'Photography & videography','Learning to capture and produce quality visual content.'],
+  [Video,'Content creation & editing','Planning, creating and publishing digital content, including video and podcasting.'],
+  [Palette,'Art & design','Painting, art creation, graphic design, branding and visual communication using creative tools.'],
+  [BrainCircuit,'Introductory AI','Accessible, responsible use of AI to support creativity, productivity and content development.'],
+  [Megaphone,'Digital marketing','Building confidence with social media, digital promotion and tools such as Canva and Adobe.'],
+  [BriefcaseBusiness,'Employment & enterprise','CV and digital employment skills, portfolio development and practical projects that can support work, freelancing or entrepreneurship.'],
+]
+export default function CreativeFutures(){return <>
+<section className="bg-slate-900 py-20 text-white"><div className="max-w-[1180px] mx-auto px-6"><p className="text-sm font-bold uppercase tracking-wider text-amber-300 mb-3">Developing initiative</p><h1 className="font-display font-extrabold text-[clamp(38px,7vw,62px)] mb-5">Creative Futures</h1><p className="text-xl text-white/75 max-w-[760px] leading-relaxed">Helping adults build creative, digital and practical skills that can strengthen confidence, open employment opportunities and encourage entrepreneurship.</p></div></section>
+<section className="py-20 bg-white"><div className="max-w-[1180px] mx-auto px-6"><div className="grid lg:grid-cols-3 gap-6 mb-14">{[['Problem','Digital exclusion, low confidence and limited access to creative opportunities can make it harder for people to participate, express themselves and progress.'],['Impact','Accessible creative and digital learning can help people build confidence, develop portfolios, connect with others and explore future employment, freelancing or business opportunities.'],['Solution','Creative Futures is being developed around practical, welcoming sessions where participants can learn by doing and apply new skills to real projects.']].map(([h,t],i)=><RevealOnScroll key={h} delay={i*.08}><div className="h-full rounded-3xl bg-slate-50 border border-slate-100 p-7"><p className="text-sm font-bold uppercase tracking-wider text-teal-primary mb-3">{h}</p><p className="text-slate-600 leading-relaxed">{t}</p></div></RevealOnScroll>)}</div>
+<RevealOnScroll className="text-center max-w-[720px] mx-auto mb-10"><h2 className="font-display font-extrabold text-4xl text-slate-800 mb-4">Skills we're developing around</h2><p className="text-slate-600">The programme is in development. These are planned areas of activity rather than claims of sessions already delivered.</p></RevealOnScroll>
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">{skills.map(([Icon,title,text]:any,i)=><RevealOnScroll key={title} delay={(i%3)*.06}><div className="h-full rounded-2xl border border-slate-100 p-6 shadow-card"><Icon className="w-7 h-7 text-teal-primary mb-4"/><h3 className="font-display font-bold text-lg text-slate-800 mb-2">{title}</h3><p className="text-sm text-slate-600 leading-relaxed">{text}</p></div></RevealOnScroll>)}</div></div></section>
+<section className="py-16 bg-teal-primary text-white text-center"><div className="max-w-[760px] mx-auto px-6"><h2 className="font-display font-extrabold text-3xl mb-4">Interested in Creative Futures?</h2><p className="text-white/75 mb-7">We're interested in hearing from participants, community organisations, creative practitioners and funders who could help shape the initiative.</p><Link href="/contact" className="inline-flex items-center gap-2 bg-amber-400 px-7 py-3.5 rounded-full font-semibold">Talk to us <ArrowRight className="w-4 h-4"/></Link></div></section>
+</>}

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Mail } from 'lucide-react'
+import { ArrowRight, CheckCircle, Mail, HeartHandshake } from 'lucide-react'
 import { SERVICES, SITE_CONFIG } from '@/lib/constants'
 import RevealOnScroll from '@/components/animations/RevealOnScroll'
 
@@ -77,6 +77,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="py-16 sm:py-24 bg-slate-900 text-white">
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <RevealOnScroll direction="left">
+            <p className="text-sm font-bold uppercase tracking-wider text-amber-300 mb-3">Why we do what we do</p>
+            <h2 className="font-display font-extrabold text-[clamp(32px,8vw,44px)] leading-tight mb-5">Momentum grew from lived experience</h2>
+            <p className="text-white/75 text-lg leading-relaxed mb-5">Our founders know how quickly confidence, routine and connection can change. Two experienced the mental-health impact of being released from football academy scholarships. Two experienced significant anxiety and social withdrawal after COVID, with sport becoming an important outlet.</p>
+            <p className="text-white/75 leading-relaxed">Those different experiences led to the same belief: people need accessible ways to move, connect, rebuild confidence and feel part of something. Momentum exists to help create those opportunities for other adults.</p>
+          </RevealOnScroll>
+          <RevealOnScroll direction="right" delay={0.08}>
+            <div className="grid grid-cols-3 gap-3">
+              {['Problem','Impact','Solution'].map((x,i)=><div key={x} className="rounded-2xl bg-white/10 border border-white/10 p-4 sm:p-5"><div className="text-amber-300 font-display font-extrabold text-lg mb-2">0{i+1}</div><div className="font-semibold">{x}</div></div>)}
+            </div>
+            <Link href="/impact" className="mt-6 inline-flex items-center gap-2 text-amber-300 font-semibold">See the local evidence <ArrowRight className="w-4 h-4" /></Link>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-24 bg-slate-50">
         <div className="max-w-[1180px] mx-auto px-5 sm:px-6">
           <RevealOnScroll className="text-center max-w-[700px] mx-auto mb-10 sm:mb-12">
@@ -118,13 +135,20 @@ export default function HomePage() {
       </section>
 
       <section className="py-16 sm:py-20 bg-slate-50">
-        <RevealOnScroll className="max-w-[1180px] mx-auto px-5 sm:px-6 text-center">
-          <p className="text-sm font-bold uppercase tracking-wider text-teal-primary mb-3">Our partners</p>
-          <h2 className="font-display font-extrabold text-3xl text-slate-800 mb-4">Partnerships coming soon</h2>
-          <p className="text-slate-600 max-w-[600px] mx-auto mb-7">We are preparing this section as our partnership network develops.</p>
-          <Link href="/partners" className="inline-flex items-center gap-1 text-teal-primary font-semibold hover:gap-2 transition-all">Explore partnership opportunities →</Link>
-        </RevealOnScroll>
+        <div className="max-w-[1180px] mx-auto px-5 sm:px-6 grid lg:grid-cols-[1.2fr_.8fr] gap-8 items-center">
+          <RevealOnScroll>
+            <p className="text-sm font-bold uppercase tracking-wider text-teal-primary mb-3">Supported by</p>
+            <h2 className="font-display font-extrabold text-3xl text-slate-800 mb-4">National Lottery funding helping our community work move forward</h2>
+            <p className="text-slate-600 max-w-[650px] mb-6">We are proud to have received funding from The National Lottery Community Fund for Move • Connect • Thrive, supporting our work to create accessible opportunities for adults to improve wellbeing, become more active and connect with others.</p>
+            <Link href="/programmes" className="inline-flex items-center gap-2 text-teal-primary font-semibold">Explore Move • Connect • Thrive <ArrowRight className="w-4 h-4"/></Link>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.08} className="bg-white rounded-3xl p-7 border border-slate-100 flex items-center justify-center min-h-[170px]">
+            <img src="https://www.tnlcommunityfund.org.uk/media/5w3bzyq5/the-national-lottery-community-fund-colour-logo-in-english.png?format=webp&quality=80&v=1dcef537582c260&width=800" alt="The National Lottery Community Fund" className="w-full max-w-[330px] h-auto" />
+          </RevealOnScroll>
+        </div>
       </section>
+
+      <section className="py-16 sm:py-20 bg-white"><RevealOnScroll className="max-w-[900px] mx-auto px-5 sm:px-6 text-center"><HeartHandshake className="w-10 h-10 mx-auto text-teal-primary mb-4"/><p className="text-sm font-bold uppercase tracking-wider text-teal-primary mb-3">Support a project</p><h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-800 mb-4">Help us make wellbeing more accessible</h2><p className="text-slate-600 max-w-[650px] mx-auto mb-7">Our online donation facility is being set up. In the meantime, you can talk to us about supporting a project, grant funding or partnership opportunities.</p><Link href="/donate" className="button-lift inline-flex items-center gap-2 bg-amber-400 text-white px-7 py-3.5 rounded-full font-semibold">Support Momentum <ArrowRight className="w-4 h-4"/></Link></RevealOnScroll></section>
 
       <section className="py-16 sm:py-20 bg-teal-primary text-white">
         <RevealOnScroll className="max-w-[900px] mx-auto px-5 sm:px-6 text-center">
